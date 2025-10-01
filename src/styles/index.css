@@ -1,0 +1,111 @@
+/* general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.wrapper {
+    min-height: 100vh;
+    max-width: 1500px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 15px;
+}
+
+.header .logo {
+    font-size: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+}
+
+.links ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.links ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+
+/* Main */
+.main {
+    flex: 1;
+}
+
+
+/* Footer */
+.footer {
+    display: flex;
+    background-color: black;
+    color: white;
+    padding: 15px;
+}
+
+/* Modal */
+.image_modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.image_modal-wrapper {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal_header {
+    text-align: right;
+    font-size: 30px;
+    color: #7d7878;
+}
+
+.modal_header p {
+    cursor: pointer;
+}
+
+.modal_footer {
+    font-size: 14px;
+    color: #7d7878;
+}
+
+/* image */
+.image {
+    height: 300px;
+    width: auto;
+    cursor: pointer;
+}
