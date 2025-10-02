@@ -1,18 +1,14 @@
 .history_body {
-    min-height: 100vh;
     margin: auto;
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .history_list {
+    align-items: center;
     list-style: none;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 10px;
     margin: auto;
     width: 100%;
