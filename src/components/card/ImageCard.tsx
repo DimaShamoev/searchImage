@@ -1,4 +1,5 @@
 import type { FunctionComponent } from "react"
+
 import type { IImage } from "../../types/image.type"
 
 interface IIMageCardProps {

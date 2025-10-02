@@ -1,6 +1,9 @@
 import type { FunctionComponent } from "react"
+
 import type { IImage } from "../../types/image.type"
+
 import { getPhotoById } from "../../api/api"
+
 import { useQuery } from "@tanstack/react-query"
 
 interface IImageModalProps {
@@ -12,9 +15,9 @@ const ImageModal: FunctionComponent<IImageModalProps> = ({ image, onClose }) => 
 
     const { data, isLoading } = useQuery({
         queryKey: ['photo', image?.id],
-        queryFn: () => image ? getPhotoById(image.id) : Promise.resolve(null),
-        enabled: !!image, // Only fetch if image exists
-        staleTime: 1000 * 60 * 5, // cache 5 minutes
+        queryFn: () => image && getPhotoById(image.id),
+        enabled: !!image,
+        staleTime: 1000 * 60 * 5,
     })
 
     return (
@@ -31,7 +34,7 @@ const ImageModal: FunctionComponent<IImageModalProps> = ({ image, onClose }) => 
                         <div className="modal_body">
                             <img
                                 src={image?.urls.small}
-                                height={500}
+                                height={400}
                                 alt={data.alt_description || 'image'}
                             />
                         </div>

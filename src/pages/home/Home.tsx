@@ -29,20 +29,30 @@ const Home: FunctionComponent = () => {
     })
 
     useInfiniteScroll({ fetchNextPage, hasNextPage })
-    
+
+    const handleImageSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setSearch(e.target.value)
+    }
+
+    const saveSearchHistory = (query: string) => {
+        if (!query.trim()) return
+        const history = JSON.parse(localStorage.getItem("history") || "[]")
+        localStorage.setItem("history", JSON.stringify([...history, query.trim()]))
+    }
+
     useEffect(() => {
-        window.scrollTo(0, 0)
+        saveSearchHistory(debouncedSearch)
     }, [debouncedSearch])
 
     return (
-        <div>
+        <div className="home_wrapper">
             <div className="home_header">
                 <input
                     className="search"
                     type="text"
                     placeholder="search"   
                     value={search}
-                    onChange={(e) => setSearch(e.target.value)} 
+                    onChange={handleImageSearch} 
                 />
             </div>
             <div className="home_body">

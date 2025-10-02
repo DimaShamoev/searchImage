@@ -1,11 +1,13 @@
-import type { FunctionComponent } from "react"
-import Header from "./components/Header"
+import { type FunctionComponent } from "react"
+
 import { Outlet } from "react-router-dom"
+
+import Header from "./components/Header"
 import Footer from "./components/Footer"
 
 const Layout: FunctionComponent = () => {
     return (
-        <div className="wrapper">
+        <div className="wrapper" >
             <Header />
             <main className="main">
                 <Outlet />

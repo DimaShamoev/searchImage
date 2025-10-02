@@ -7,6 +7,7 @@
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #f6f6f6;
 }
 
 .wrapper {
@@ -53,10 +54,10 @@ body {
     }
 }
 
-
 /* Main */
 .main {
     flex: 1;
+    padding: 15px;
 }
 
 
@@ -108,4 +109,31 @@ body {
     height: 300px;
     width: auto;
     cursor: pointer;
+}
+
+/* Loader */
+.screen_loader {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.screen_loader .inner-screen_loader {
+    height: 300px;
+    width: 300px;
+    border: solid 20px white;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    border-right: 20px solid transparent;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    } to {
+        transform: rotate(360deg);
+    }
 }

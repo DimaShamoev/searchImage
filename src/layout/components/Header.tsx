@@ -1,4 +1,5 @@
 import type { FunctionComponent } from "react"
+
 import { Link } from "react-router-dom"
 
 const Header: FunctionComponent = () => {
